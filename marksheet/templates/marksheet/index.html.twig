@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marksheet of
+	{{student.name}}
+{% endblock %}
+
+{% block body %}
+	{% set totalMarks = 0 %}
+	{% set totalObtainedMarks = 0 %}
+	{% set passingMarks = 100 %}
+
+	<div class="container my-5 p-3 bg-white shadow rounded">
+		<h1 class="custom-heading my-3 bg-primary">X University</h1>
+
+		<table class="table table-bordered mb-3">
+			<thead>
+				<tr>
+					<th scope="col" class="table-warning">Class:</th>
+					<td>{{student.class}}</td>
+					<th scope="col" class="table-warning">Session:</th>
+					<td scope="col">{{student.session}}</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row" class="table-warning">Roll Number:</th>
+					<td>{{student.rollNumber}}</td>
+					<th class="table-warning">Date of Birth</th>
+					<td>{{ student.dateOfBirth|date('d-m-Y') }}</td>
+				</tr>
+				<tr>
+					<th scope="row" class="table-warning">Name:</th>
+					<td>{{student.name}}</td>
+					<th class="table-warning">Father's Name:</th>
+					<td>{{student.fatherName}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table class="table table-bordered mb-3">
+			<thead>
+				<tr>
+					<th scope="col" class="table-success">Subjects</th>
+					<th scope="col" class="table-success">Total Marks</th>
+					<th scope="col" class="table-success">Passing Marks</th>
+					<th scope="col" class="table-success">Marks Obtained</th>
+					<th scope="col" class="table-success">Grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for mark in marks %}
+					{% set totalMarks = totalMarks + mark.totalMarks %}
+					{% set totalObtainedMarks = totalObtainedMarks + mark.obtainedMarks %}
+					<tr>
+						<th scope="row">{{mark.subject}}</th>
+						<td>{{mark.totalMarks}}</td>
+						<td>{{mark.passingMarks}}</td>
+						<td class="table-danger">{{mark.obtainedMarks}}</td>
+						<td>{{mark.grade}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<table class="table table-bordered mb-3">
+			<thead>
+				<tr>
+					<th scope="col" class="table-info">Total Marks:</th>
+					<td>{{totalMarks}}</td>
+					<th scope="col" class="table-info">Obtained Marks:</th>
+					<td scope="col">{{totalObtainedMarks}}</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row" class="table-info">Passing Marks:</th>
+					<td>{{passingMarks}}</td>
+					<th class="table-info">Percentage:</th>
+					<td>{{ ((totalObtainedMarks / totalMarks) * 100)|number_format(2, '.', '') }}%</td>
+				</tr>
+				<tr>
+					<th scope="row">Result:</th>
+					<td>
+						{% if totalObtainedMarks >= passingMarks %}
+							PASS
+						{% else %}
+							FAIL
+						{% endif %}
+					</td>
+					<th>Grade</th>
+					<td>
+						{% if totalObtainedMarks >= 250 %}
+							A
+						{% elseif totalObtainedMarks >= 200 %}
+							B
+						{% elseif totalObtainedMarks >= 150 %}
+							C
+						{% else %}
+							D
+						{% endif %}
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

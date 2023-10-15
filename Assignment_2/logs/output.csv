@@ -1,0 +1,4 @@
+id,sku,name,image,price,weight,description,category,brand,dimensions,categoryName,categoryDescription
+5,SKU123450,name,http,842,84,desc,5,"name of brand",8x838x8,Book,"Default Description"
+6,SKU123456,Prod1,https,89,293,"Desc of prod",6,"name of brand",6x7x72,Electronics,"Default Description"
+7,SKU123458,prod2,http,39,839,desc,7,X,3x73x4,"Other Cat","Default Description"

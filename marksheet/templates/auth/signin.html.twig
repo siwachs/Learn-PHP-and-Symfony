@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign In!
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5 p-3 bg-white rounded shadow">
+		{% if error %}
+			<div class="alert alert-danger my-3" role="alert">
+				{{ error.messageKey|trans(error.messageData, 'security') }}
+			</div>
+		{% endif %}
+
+		<form action="{{ path('app_signin') }}" method="post">
+			<div class="mb-3">
+				<label for="username" class="form-label">Email address</label>
+				<input placeholder="test@gmail.com" type="text" id="username" name="_username" value="{{ last_username }}" class="form-control">
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label">Password</label>
+				<input placeholder="q1q1q1q1" type="password" id="password" name="_password" class="form-control">
+			</div>
+			<button type="submit" class="btn btn-primary mb-3">Sign In</button>
+
+			<a href="{{path('app_signup')}}" class="d-block">New User? Sign Up Here!</a>
+		</form>
+	</div>
+{% endblock %}

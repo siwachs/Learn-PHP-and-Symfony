@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign Up!
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5 p-3 bg-white rounded shadow">
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<a href="{{path('app_signin')}}" class="d-block">Have a Account? Sign In Here!</a>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

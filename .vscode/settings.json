@@ -1,0 +1,9 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 28, //28
+  "editor.wordWrap": "on",
+  "editor.fontWeight": "bold",
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true
+}
