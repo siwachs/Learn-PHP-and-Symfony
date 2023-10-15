@@ -1,3 +1,3 @@
 # Learn-PHP
 
-PHP sites with MVC design pattern
+Repo to learn PHP with MVC Design Patterns and Symfony Framework.
