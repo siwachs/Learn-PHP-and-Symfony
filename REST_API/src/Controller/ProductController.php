@@ -37,7 +37,7 @@ class ProductController extends AbstractController
         return true;
     }
 
-    #[Route('/get-products', name: 'app_get_products', methods: ['GET', 'HEAD'])]
+    #[Route('/products', name: 'app_get_products', methods: ['GET', 'HEAD'])]
     public function getProducts(): JsonResponse
     {
         try {
@@ -66,7 +66,7 @@ class ProductController extends AbstractController
         }
     }
 
-    #[Route('/get-product', name: 'app_get_product', methods: ['GET', 'HEAD'])]
+    #[Route('/product', name: 'app_get_product', methods: ['GET', 'HEAD'])]
     public function getProduct(Request $request): JsonResponse
     {
         try {
@@ -107,7 +107,7 @@ class ProductController extends AbstractController
         }
     }
 
-    #[Route('/remove-product', name: 'app_remove_product', methods: ['DELETE'])]
+    #[Route('/product-remove', name: 'app_remove_product', methods: ['DELETE'])]
     public function removeProduct(Request $request): JsonResponse
     {
         try {
@@ -144,7 +144,7 @@ class ProductController extends AbstractController
         }
     }
 
-    #[Route('/update-product', name: 'app_update_product', methods: ['PATCH'])]
+    #[Route('/product-update', name: 'app_update_product', methods: ['PATCH'])]
     public function updateProduct(Request $request): JsonResponse
     {
         try {
@@ -209,7 +209,7 @@ class ProductController extends AbstractController
         }
     }
 
-    #[Route('/create-product', name: 'app_create_product', methods: ['POST'])]
+    #[Route('/product-create', name: 'app_create_product', methods: ['POST'])]
     public function createProduct(Request $request): JsonResponse
     {
         try {

@@ -38,7 +38,7 @@ class CustomerController extends AbstractController
         return true;
     }
 
-    #[Route('/get-customers', name: 'app_get_customers', methods: ['GET', 'HEAD'])]
+    #[Route('/customers', name: 'app_get_customers', methods: ['GET', 'HEAD'])]
     public function getCustomers(): JsonResponse
     {
         try {
@@ -66,7 +66,7 @@ class CustomerController extends AbstractController
         }
     }
 
-    #[Route('/get-customer', name: 'app_get_customer', methods: ['GET', 'HEAD'])]
+    #[Route('/customer', name: 'app_get_customer', methods: ['GET', 'HEAD'])]
     public function getCustomer(Request $request): JsonResponse
     {
         try {
@@ -106,7 +106,7 @@ class CustomerController extends AbstractController
         }
     }
 
-    #[Route('/remove-customer', name: 'app_remove_customer', methods: ['DELETE'])]
+    #[Route('/customer-remove', name: 'app_remove_customer', methods: ['DELETE'])]
     public function removeCustomer(Request $request): JsonResponse
     {
         try {
@@ -143,7 +143,7 @@ class CustomerController extends AbstractController
         }
     }
 
-    #[Route('/update-customer', name: 'app_update_customer', methods: ['PATCH'])]
+    #[Route('/customer-update', name: 'app_update_customer', methods: ['PATCH'])]
     public function updateCustomer(Request $request): JsonResponse
     {
         try {
@@ -202,7 +202,7 @@ class CustomerController extends AbstractController
         }
     }
 
-    #[Route('/create-customer', name: 'app_create_customer', methods: ['POST'])]
+    #[Route('/customer-create', name: 'app_create_customer', methods: ['POST'])]
     public function createCustomer(Request $request): JsonResponse
     {
         try {
